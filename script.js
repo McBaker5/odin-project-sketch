@@ -8,17 +8,18 @@ let createGrid = () => {
         for (let j = 0; j < 16; j++) {
             const gridSquare = document.createElement('div');
             gridSquare.classList.add('grid-square');
-            //gridSquare.addEventListener() {
-
-            //}
+            gridSquare.addEventListener('mouseenter', drawSquare);
             row.appendChild(gridSquare);
         }
         container.appendChild(row);
     }
 }
 
-//let drawSquare = (e) => {
-    
-//}
+// Change the color of a square when it is hovered over
+let drawSquare = (e) => {
+    if (e.target.style.backgroundColor != 'black') {
+        e.target.style.backgroundColor = 'black';
+    }
+}
 
 createGrid();
